@@ -34,10 +34,6 @@ beforeEach(() =>{
     }
 })
 
-
-
-
-
 test("test should contains 3 houses", ()=> {
     expect(city.houses.length).toBe(3);
 
@@ -55,8 +51,6 @@ test("test should contains 3 houses", ()=> {
     expect(city.houses[2].repaired).toBe(false);
     expect(city.houses[2].adress.number).toBe(101);
     expect(city.houses[2].adress.street.title).toBe("Happy street");
-
-
 })
 
 test("test should contains hospital and fire station", ()=> {
