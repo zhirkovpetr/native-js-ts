@@ -1,20 +1,20 @@
-import {studentType} from '../02-hello-tests/02'
 import {addSkill, studentActive, studentCity} from "./03";
-let student: studentType;
+import {StudentType} from "../02-object/02";
+let student: StudentType;
 
 beforeEach(()=> {
     student= {
         name: "Dimych",
         age: 32,
         isActive: false,
-        adress: {
-            streat: "Syrganova 2",
+        address: {
+            street: "Syrganova 2",
             city: {
                 country: "Belarus",
                 city: "Minsk"
             }
         },
-        technologes: [
+        technologies: [
             {
                 id: 1,
                 title: "HTML"
@@ -32,11 +32,11 @@ beforeEach(()=> {
 })
 
 test("new teach skill should be added to student", ()=> {
-    expect(student.technologes.length).toBe(3);
+    expect(student.technologies.length).toBe(3);
     addSkill(student, 'React');
-    expect(student.technologes.length).toBe(4);
-    expect(student.technologes[3].title).toBe('React');
-    expect(student.technologes[3].id).toBeDefined();
+    expect(student.technologies.length).toBe(4);
+    expect(student.technologies[3].title).toBe('React');
+    expect(student.technologies[3].id).toBeDefined();
 })
 
 test("student should be made active", ()=> {
@@ -47,7 +47,6 @@ test("student should be made active", ()=> {
 })
 
 test("student live in city?", ()=> {
-
     let result1= studentCity(student, "Minsk");
     let result2= studentCity(student, "Moscow");
 
