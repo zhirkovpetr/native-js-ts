@@ -1,21 +1,22 @@
-
-type localcityType= {
+type LocalCityType= {
     country: string,
     city: string
 }
 
-type adressType={
-    streat: string,
-    city: localcityType
+type AddressType={
+    street: string,
+    city: LocalCityType
 }
-type technologesType= {
+
+type TechnologiesType= {
     id: number,
     title: string
 }
-export type studentType={
+
+export type StudentType={
     name: string,
     age: number,
     isActive: boolean,
-    adress: adressType,
-    technologes: Array<technologesType>
+    address: AddressType,
+    technologies: TechnologiesType[]
 }
