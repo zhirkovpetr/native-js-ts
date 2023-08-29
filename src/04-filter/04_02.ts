@@ -1,4 +1,4 @@
-import {demoLishHousesOnTheStreet} from "./04";
+import {demolishHousesOnTheStreet} from "./04";
 import {getBuildingsWithStaffCountGreaterThen} from  "./04"
 import {CityType} from "../02-object/02_02";
 
@@ -42,22 +42,16 @@ beforeEach(() =>{
     }
 })
 
-
-
 test("Houses should be destroyed", ()=> {
-    demoLishHousesOnTheStreet(city, 'Happy street')
+    demolishHousesOnTheStreet(city, 'Happy street')
 
     expect(city.houses.length).toBe(1);
     expect(city.houses[0].id).toBe(1);
 })
 
-
-
 test("buildings with correct staff count", ()=> {
-
     let buildings= getBuildingsWithStaffCountGreaterThen(city.builtAt, 500);
 
     expect(buildings.length).toBe(1);
     expect(buildings[0]).toBe('FIRE-STATION');
-
 })
